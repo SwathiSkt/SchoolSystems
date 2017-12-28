@@ -24,45 +24,31 @@ include('config.php');
   <?php
   include('include/header.php');
   ?>
-
-
-
     <div class="page-content">
     	<div class="row">
-		  
-		  <div class="col-md-12">
-		  	<div class="row">
-		  		<div class="col-md-12">
-		  			<div class="content-box-large">
-		  				<div class="panel-heading">
-							<div class="panel-title">Welcome To SMS</div>
-							
-						</div>
-						
-		  				<div class="panel-body">
-						
-						<div class="col-md-6">
-						<div class="w3-content w3-section">
-						 
-						 <?php
-					 		
-	                 		$result = mysql_query("SELECT * FROM resources");
-                     		while($row = mysql_fetch_array($result))
-                     		{
-					 		?>
-						 
-						 <img class="mySlides w3-animate-fading" src="resources/<?php echo $row['image']; ?>" style="width:100%">
-						 
-						 <?php
-						 }
-						 ?>
- 
-</div>
-
+	  <div class="col-md-12">
+  	<div class="row">
+	<div class="col-md-12">
+	<div class="content-box-large">
+	<div class="panel-heading">
+	<div class="panel-title">Welcome To SMS</div>
+	</div>
+	<div class="panel-body">
+	<div class="col-md-6">
+	<div class="w3-content w3-section">
+		<?php
+		$result = mysql_query("SELECT * FROM resources");
+                  while($row = mysql_fetch_array($result))
+                   		{
+				?>
+			  <img class="mySlides w3-animate-fading" src="resources/<?php echo $row['image']; ?>" style="width:100%">
+			 <?php
+			 }
+			 ?>
+ </div>
 <script>
 var myIndex = 0;
 carousel();
-
 function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
@@ -75,42 +61,27 @@ function carousel() {
     setTimeout(carousel, 9000);    
 }
 </script>
-						
 	</div>					
-				
-				
-				<div class="col-md-6">		
-						<?php
-					 		
-	                 		$result = mysql_query("SELECT * FROM blog where id = 1");
+	<div class="col-md-6">		
+	<?php
+            		$result = mysql_query("SELECT * FROM blog where id = 1");
                      		while($row = mysql_fetch_array($result))
                      		{
 					 		echo $row['content']; 
 						 }
 						 ?>
  
-							
-						
-						</div>
-							
-		  				</div>
-		  			</div>
-		  		</div>
-
-		  		
-		  	</div>
-
-		  	
-
-		  
-		  </div>
+					</div>
+				</div>
+			</div>
+  		</div>
+  	</div>
+  </div>
 		</div>
     </div>
-
    <?php
    include('include/footer.php');
    ?>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
